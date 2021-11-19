@@ -1,0 +1,39 @@
+data:
+  doc_size: 10
+  history_size: 50
+  word_size: 30004
+  entity_size: 17043
+  dataset: MINDsmall
+  data_root: ../data/MINDsmall
+  news_feature_file: doc_feature.txt
+  user_history_file: user_history.txt
+  train_file: train/train.txt
+  valid_file: valid/valid.txt
+  pretrained_word_embedding: word_embeddings_5w_100.npy
+  pretrained_entity_embedding: entity_embeddings_5w_100.npy
+  
+model:
+  use_context: false
+  word_embedding_dim: 100
+  entity_embedding_dim: 100
+  num_filters: 100
+  filter_sizes: [1, 2, 3]
+  attention_hidden_size: 100
+  predictor_hidden_sizes: [300]
+  dropout: 0.0
+
+train:
+  evaluate: False
+  log_root: ../checkpoint
+  model_root: ./model
+  trained_model_dir: null
+  model_name: first_test
+  batch_size: 100
+  num_workers: 4
+  num_epochs: 10
+  learning_rate: 0.0003
+  display_step: 10
+  save_step: 2000
+
+setting:
+  gpu: 1
